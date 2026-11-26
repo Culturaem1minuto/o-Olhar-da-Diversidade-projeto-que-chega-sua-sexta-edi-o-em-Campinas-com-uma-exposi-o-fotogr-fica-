@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Fraunces:opsz,wght@9..144,900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #F2EDE3;
+  --cinema: #0E1E22;
+  --amber: #E8A33D;
+  --terracotta: #C96A3B;
+  --ink: #12181A;
+  --black: #0A0A0A;
+  --line: rgba(18, 24, 26, 0.16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Lora", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display { font-family: "Fraunces", Georgia, serif; }
+.font-seal { font-family: "Archivo", Helvetica, Arial, sans-serif; }
+
+.hero-media {
+  height: 62vh;
+  min-height: 400px;
+}
+@media (min-width: 768px) {
+  .hero-media { height: 88vh; min-height: 560px; }
+}
+.hero-title {
+  font-size: clamp(30px, 8.2vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+}
+.article-body {
+  font-size: 17px;
+  line-height: 1.75;
+}
+@media (min-width: 768px) {
+  .article-body { font-size: 18px; }
+}
+.article-body p { margin: 0 0 1.45em; }
+.article-body p:last-child { margin-bottom: 0; }
+.dropcap::first-letter {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  font-size: 3.35em;
+  line-height: 0.78;
+  float: left;
+  padding: 0.08em 0.12em 0 0;
+  color: var(--terracotta);
+}
+.photo-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: var(--cinema);
+}
+::selection { background: var(--amber); color: #12181A; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #F2EDE3;
+    --cinema: #0E1E22;
+    --amber: #E8A33D;
+    --terracotta: #C96A3B;
+    --ink: #12181A;
+  }
+}
